@@ -29,6 +29,8 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
     tags = models.ManyToManyField(Tag)
 
+    def __str__(self):
+        return f"{self.title}"
 
 class Comment(models.Model):
     user_name = models.CharField(max_length=120)
